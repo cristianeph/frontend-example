@@ -20,11 +20,22 @@ $(document).ready(function($){
 		
 		if(validateInteger(number) == true){
 			
-			numbers.push(parseInt(number));
-			
-			console.log(numbers.sort(sortIntegers));
-			
-			printNumbers(numbers);
+			/* validamos que el valor ingresado no se repita, 
+			 * sino mostramos un mensaje*/
+
+			if(validateRepetitive(parseInt(number)) == true){
+
+				numbers.push(parseInt(number));
+				
+				console.log(numbers.sort(sortIntegers));
+				
+				printNumbers(numbers);
+				
+			}else{
+				
+				alert("el valor que ha ingresado esta repetido, ingrese un valor correcto");
+				
+			}
 			
 		}else{
 			
@@ -40,6 +51,32 @@ $(document).ready(function($){
 	});
 	
 });
+
+
+/* metodo para validar numeros repetidos */
+function validateRepetitive(number){
+		
+	if(numbers.length == 0){
+		
+		return true;
+		
+	}else{
+		
+		console.log(numbers.indexOf(number));
+		
+		if(numbers.indexOf(number) == -1){
+			
+			return true;
+			
+		}else{
+			
+			return false;
+			
+		}
+		
+	}
+	
+}
 
 /* funcion que sirve para imprimir los 
  * numeros enteros ya validados del array 
@@ -68,14 +105,15 @@ function sortIntegers(a, b){
  * enteros*/
 function validateInteger(value){
 	
-	var x;
-	
-	if(isNaN(value)){
+	if( (!isNaN(value)) && 
+		((parseFloat(value) % 1) == 0)){
+		
+		return true;
+		
+	}else{
+		
 		return false;
+		
 	}
-	
-	x = parseFloat(value);
-	
-	return (x | 0) === x;
 	
 }
