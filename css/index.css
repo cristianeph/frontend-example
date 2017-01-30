@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+/* se resetan los margins y paddings de todo el 
+archivo html para hacerlos manipulables por completo*/
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 1.5em !important;
+	font-family: 'Open Sans', sans-serif;
+}
+h1{
+	padding: 0.5em 0.5em;
+	display: block;
+}
+h1 span{
+	font-size: 2em;
+}
+input{
+	padding: 0.5em 0.5em calc(0.5em - 1px) 0.5em;
+	border: 0 solid transparent; 
+	border-bottom: 1px dotted grey;
+}
+button{
+	padding: 0.5em 0.5em;
+	margin: 0;
+	border: 0 solid transparent;
+	background-color: orange;
+}
+.inputs{
+	
+}
+.inputs div{
+	padding: 0.5em 0.5em;
+}
+.result{
+	
+}
+ul{
+	list-style: none;
+}
+ul li{
+	float: left;
+}
+li span{
+	display: block;
+	padding: 0.5em 0.5em;
+}

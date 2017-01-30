@@ -8,8 +8,10 @@
 		<title>Front end example</title>
 		<!-- se vinculan archivos adicionales de estilos (primero estilos por buenas practicas ya que puede ser
 			 que en javascript se manipulen estilos o propiedades css) -->
-		<!-- llamamos a una url externa para utilizar una fuente de txto mas presentable -->
+		<!-- vinculamos una url externa para utilizar una fuente de txto mas presentable -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" />
+		<!-- vinculamos el archivo de estilos para esta pagina y hacer los elementos mas presentables -->
+		<link rel="stylesheet" href="css/index.css" />
 		<!-- se vinculan archivos adicionales de javascript (frameworks primero, en este caso jquery para la 
 			 sencilla manipulacion de elementos del dom) -->
 		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
@@ -17,7 +19,7 @@
 		<script type="text/javascript" src="js/index.js"></script>
 	</head>
 	<body>
-		<h1>Ejemplo frontend</h1>
+		<h1><span>Ejemplo frontend</span></h1>
 		<section class="inputs">
 			<form>
 				<div>
