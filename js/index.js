@@ -8,9 +8,15 @@ $(document).ready(function($){
 	
 	$("form").submit(function(event){
 		
+		/* prevenimos evento automatico de envio 
+		 * de formulario al servidor*/
+		
 		event.preventDefault();
 		
 		var number = $("input").val();
+		
+		/* validamos que el valor ingresado se entero, 
+		 * sino mostramos un mensaje*/
 		
 		if(validateInteger(number) == true){
 			
@@ -26,12 +32,18 @@ $(document).ready(function($){
 			
 		}
 		
+		/* sea cual sea el caso el valor del 
+		 * input se resetea a vacio*/
+		
 		$("input").val("");
 		
 	});
 	
 });
 
+/* funcion que sirve para imprimir los 
+ * numeros enteros ya validados del array 
+ * en el html*/
 function printNumbers(numbers){
 	
 	$(".result ul li").remove();
@@ -44,12 +56,16 @@ function printNumbers(numbers){
 	
 }
 
+/* function para ordenar los numeros 
+ * enteros*/
 function sortIntegers(a, b){
 	
 	return a - b;
 	
 }
 
+/* funcion para validar los numeros 
+ * enteros*/
 function validateInteger(value){
 	
 	var x;
