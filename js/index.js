@@ -78,7 +78,8 @@ function validateRepetitive(number){
 
 /* funcion que sirve para imprimir los 
  * numeros enteros ya validados del array 
- * en el html*/
+ * en el html y animarlos con la funcion 
+ * animate de jquery*/
 function printNumbers(number){
 	
 	console.log(numbers.sort(sortIntegers));
@@ -87,12 +88,15 @@ function printNumbers(number){
 		
 	$(numbers).each(function(i, item){
 		
-		//console.log($(".result ul ." +  item));
-		
 		var element = $(".result ul ." +  item);
 		
+		/* se calcula el espacio hacia la izquierda por 
+		 * el ancho fijo del cuadro segun la posicion de 
+		 * elemento del array*/
 		var width = (i == 0) ? 0 : (72 * i);
 		
+		/* se manda a consola el valor calculado para ver
+		 * posibles errores*/
 		console.log(width);
 		
 		element.animate({
