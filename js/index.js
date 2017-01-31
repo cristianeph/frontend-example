@@ -27,9 +27,7 @@ $(document).ready(function($){
 
 				numbers.push(parseInt(number));
 				
-				console.log(numbers.sort(sortIntegers));
-				
-				printNumbers(numbers);
+				printNumbers(parseInt(number));
 				
 			}else{
 				
@@ -81,13 +79,25 @@ function validateRepetitive(number){
 /* funcion que sirve para imprimir los 
  * numeros enteros ya validados del array 
  * en el html*/
-function printNumbers(numbers){
+function printNumbers(number){
 	
-	$(".result ul li").remove();
-	
+	console.log(numbers.sort(sortIntegers));
+		
+	$(".result ul").append("<li class='" + number + "'><span>" + number + "</span></li>").delay(1000);
+		
 	$(numbers).each(function(i, item){
 		
-		$(".result ul").append("<li><span>" + item + "</span></li>");
+		//console.log($(".result ul ." +  item));
+		
+		var element = $(".result ul ." +  item);
+		
+		var width = (i == 0) ? 0 : (72 * i);
+		
+		console.log(width);
+		
+		element.animate({
+			left : "+" + width + "px"
+		}, 1000);
 		
 	});
 	

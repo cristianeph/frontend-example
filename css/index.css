@@ -34,15 +34,23 @@ button{
 	padding: 0.5em 0.5em;
 }
 .result{
-	
+	overflow: hidden;
+	padding: 0.5em 0.5em;
 }
 ul{
 	list-style: none;
+	position: relative;
+	height: 2.5em;
 }
 ul li{
 	float: left;
+	position: absolute;
 }
 li span{
 	display: block;
 	padding: 0.5em 0.5em;
+	width: 5em;
+	text-align: center;
+	background-color: lightyellow;
+	outline: 1px solid grey;
 }
